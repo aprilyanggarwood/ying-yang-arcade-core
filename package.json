@@ -1,5 +1,5 @@
 {
-  "name": "ying-yang-arcade-core",
+  "name": "@1980april/arcade-core",
   "version": "1.0.0",
   
   "description": "npm package for the 2048 logic: move, spawn, hasMoves, score",
@@ -13,7 +13,7 @@
     "url": "git+https://github.com/aprilyanggarwood/ying-yang-arcade-core.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "April Yang",
   "license": "ISC",
   "type": "module",
   "bugs": {
