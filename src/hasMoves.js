@@ -1,4 +1,3 @@
-// src/hasMoves.js
 import { move } from './move.js';
 
 // true if two boards have the same contents

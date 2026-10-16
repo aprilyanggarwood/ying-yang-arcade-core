@@ -61,4 +61,4 @@ function move(board, direction) {
 }
 
 
-export { mergeRow, slideLeft, slideRight, move };
+   export { mergeRow, slideLeft, slideRight, transpose, move };
