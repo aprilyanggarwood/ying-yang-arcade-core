@@ -23,5 +23,42 @@ function mergeRow(row) {
   return merged;
 }
 
+function slideLeft(board) {
+  return board.map((row) => mergeRow(row));
+}
 
-export { mergeRow };
+
+function slideRight(board) {
+  // 1. reverse each row
+  const reversed = board.map((row) => row.slice().reverse());
+
+  // 2. slide left (reuse what you already built!)
+  const slid = slideLeft(reversed);
+
+  // 3. reverse each row back
+  return slid.map((row) => row.slice().reverse());
+}
+
+function transpose(board) {
+  return board[0].map((_, column) =>
+    board.map((row) => row[column]),
+  );
+}
+
+function move(board, direction) {
+  switch (direction) {
+    case 'left':
+      return slideLeft(board);
+    case 'right':
+      return slideRight(board);
+    case 'up':
+      return transpose(slideLeft(transpose(board)));
+    case 'down':
+      return transpose(slideRight(transpose(board)));
+    default:
+      throw new Error(`Invalid move direction: ${direction}`);
+  }
+}
+
+
+export { mergeRow, slideLeft, slideRight, move };
