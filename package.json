@@ -1,0 +1,23 @@
+{
+  "name": "ying-yang-arcade-core",
+  "version": "1.0.0",
+  
+  "description": "npm package for the 2048 logic: move, spawn, hasMoves, score",
+  "main": "src/index.js",
+  "files": ["src"],
+  "scripts": {
+    "test": "node test/core.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aprilyanggarwood/ying-yang-arcade-core.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/aprilyanggarwood/ying-yang-arcade-core/issues"
+  },
+  "homepage": "https://github.com/aprilyanggarwood/ying-yang-arcade-core#readme"
+}
