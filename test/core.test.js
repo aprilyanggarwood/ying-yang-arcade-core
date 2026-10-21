@@ -1,19 +1,24 @@
+import { mergeRow, slideLeft, slideRight, move } from '../src/move.js';
+import { hasMoves } from '../src/hasMoves.js';
+import { spawn } from '../src/spawn.js';
+import { score } from '../src/score.js';
+
 
 // Test cases for mergeRow function
-// console.log(mergeRow([2, 0, 2, 4])); // want [ 4, 4, 0, 0 ]
-// console.log(mergeRow([2, 2, 2, 2])); // want [ 4, 4, 0, 0 ]
-// console.log(mergeRow([4, 4, 8, 0])); // want [ 8, 8, 0, 0 ]
-// console.log(mergeRow([0, 0, 0, 0])); // want [ 0, 0, 0, 0 ]
-// console.log(mergeRow([2, 0, 0, 0])); // want [ 2, 0, 0, 0 ]
+console.log(mergeRow([2, 0, 2, 4])); // want [ 4, 4, 0, 0 ]
+console.log(mergeRow([2, 2, 2, 2])); // want [ 4, 4, 0, 0 ]
+console.log(mergeRow([4, 4, 8, 0])); // want [ 8, 8, 0, 0 ]
+console.log(mergeRow([0, 0, 0, 0])); // want [ 0, 0, 0, 0 ]
+console.log(mergeRow([2, 0, 0, 0])); // want [ 2, 0, 0, 0 ]
 
 
 // Test cases for slideLeft function
-// console.log(slideLeft([
-//   [2, 0, 2, 4],
-//   [0, 0, 0, 0],
-//   [4, 4, 8, 0],
-//   [2, 2, 2, 2],
-// ]));
+console.log(slideLeft([
+  [2, 0, 2, 4],
+  [0, 0, 0, 0],
+  [4, 4, 8, 0],
+  [2, 2, 2, 2],
+]));
 // want: [ [ 4, 4, 0, 0 ], [ 0, 0, 0, 0 ], [ 8, 8, 0, 0 ], [ 4, 4, 0, 0 ] ]
 
 // Test cases for slideRight function
@@ -82,6 +87,7 @@ console.log(score([
   [2, 0, 2, 0],
   [8, 8, 0, 0],
   [0, 0, 0, 0],
+
   [0, 0, 0, 0],
 ], 'left'));
 // row 0: 2+2 = 4 ; row 1: 8+8 = 16 → want 20
