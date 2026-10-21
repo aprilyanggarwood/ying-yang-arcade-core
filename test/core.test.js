@@ -5,11 +5,14 @@ import { score } from '../src/score.js';
 
 
 // Test cases for mergeRow function
-console.log(mergeRow([2, 0, 2, 4])); // want [ 4, 4, 0, 0 ]
-console.log(mergeRow([2, 2, 2, 2])); // want [ 4, 4, 0, 0 ]
-console.log(mergeRow([4, 4, 8, 0])); // want [ 8, 8, 0, 0 ]
-console.log(mergeRow([0, 0, 0, 0])); // want [ 0, 0, 0, 0 ]
-console.log(mergeRow([2, 0, 0, 0])); // want [ 2, 0, 0, 0 ]
+console.log(mergeRow([2, 0, 2, 4])); // want { row: [4,4,0,0], points: 4 }
+console.log(mergeRow([2, 2, 2, 2])); // want { row: [4,4,0,0], points: 8 }
+console.log(mergeRow([4, 4, 8, 0])); // want { row: [8,8,0,0], points: 8 }
+console.log(mergeRow([0, 0, 0, 0])); // want { row: [0,0,0,0], points: 0 }
+console.log(mergeRow([2, 0, 0, 0])); // want { row: [2,0,0,0], points: 0 }
+
+console.log(mergeRow([2,2,4,4]));
+// want: { row: [ 4, 8, 0, 0 ], points: 12 }   (2+2=4 and 4+4=8 → 4+8 points)
 
 
 // Test cases for slideLeft function

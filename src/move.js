@@ -1,30 +1,31 @@
 function mergeRow(row) {
-  // STEP 1: keep only the non-zero numbers
   const nums = row.filter((n) => n !== 0);
 
-  // STEP 2: merge equal neighbours once
   const merged = [];
+  let points = 0;              // track points earned in this row
   let i = 0;
   while (i < nums.length) {
     if (nums[i] === nums[i + 1]) {
-      merged.push(nums[i] + nums[i + 1]);
-      i += 2;   // skip both so they can't merge again
+      const sum = nums[i] + nums[i + 1];
+      merged.push(sum);
+      points += sum; // add the points earned from this merge
+      i += 2;
     } else {
       merged.push(nums[i]);
       i += 1;
     }
   }
 
-  // STEP 3: pad with zeros until it's 4 long again
   while (merged.length < 4) {
     merged.push(0);
   }
 
-  return merged;
+  return { row: merged, points };   // return both the new row and the points earned
 }
 
 function slideLeft(board) {
-  return board.map((row) => mergeRow(row));
+  // for each row, merge it and return the new row (ignore points here)
+  return board.map((row) => mergeRow(row).row);
 }
 
 

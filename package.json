@@ -1,6 +1,6 @@
 {
   "name": "@april-cs-npm/arcade-core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   
   "description": "npm package for the 2048 logic: move, spawn, hasMoves, score",
   "main": "src/index.js",

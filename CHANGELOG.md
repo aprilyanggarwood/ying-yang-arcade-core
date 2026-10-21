@@ -5,6 +5,11 @@ All notable changes to this project are documented here.
 The format is based on Keep a Changelog, and this project uses
 semantic versioning.
 
+## [1.0.1] - 2026-10-21
+
+### Changed
+- Removed duplicated merge logic. `mergeRow` now returns both the new row and the points earned, and `score` reuses it instead of re-walking each row.
+
 ## [1.0.0] - 2026-10-21
 
 ### Added
