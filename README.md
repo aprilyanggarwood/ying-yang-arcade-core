@@ -30,10 +30,13 @@ A direction is one of: `"left"`, `"right"`, `"up"`, `"down"`.
 ## Usage
 
 ```js
-import { move, spawn, hasMoves, score } from '@april-cs-npm/arcade-core';
+import { move, spawn, hasMoves, canMove, score } from '@april-cs-npm/arcade-core';
 
 // Slide and merge tiles. Returns a NEW board; the input is never changed.
 const afterMove = move(board, 'left');
+
+// Check whether a direction is a valid move (would change the board).
+const isValid = canMove(board, 'left');
 
 // How many points that move earned (the sum of tiles created by merges).
 const points = score(board, 'left');
@@ -50,6 +53,9 @@ const canKeepPlaying = hasMoves(afterSpawn);
 ### `move(board, direction)`
 Slides every tile as far as it can go in `direction`, merging equal neighbours
 once per move, and returns the new board. Does not mutate the input.
+
+### `canMove(board, direction)`
+Returns `true` if a move in that direction would change the board, `false` otherwise.
 
 ### `score(board, direction)`
 Returns the points a move in `direction` would earn: the total value of every

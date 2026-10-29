@@ -5,6 +5,17 @@ All notable changes to this project are documented here.
 The format is based on Keep a Changelog, and this project uses
 semantic versioning.
 
+## [1.1.0] - 2026-10-28
+
+### Added
+- `canMove(board, direction)` — returns whether a move in that direction would
+  change the board (a valid move).
+
+### Note
+- Kept `score(board, direction)` even though the 10/26 assignment update replaced
+  it with `canMove`. It was implemented before the change and is still used by
+  the app, so it remains part of the public API.
+
 ## [1.0.1] - 2026-10-21
 
 ### Changed

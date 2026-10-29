@@ -2,6 +2,7 @@ import { mergeRow, slideLeft, slideRight, move } from '../src/move.js';
 import { hasMoves } from '../src/hasMoves.js';
 import { spawn } from '../src/spawn.js';
 import { score } from '../src/score.js';
+import { canMove } from '../src/canMove.js';
 
 
 // Test cases for mergeRow function
@@ -118,3 +119,8 @@ console.log(score([
   [0, 0, 0, 0],
 ], 'down'));
 // column 0 downward: 2+2=4 → want 4
+
+console.log(canMove([[2,2,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]], 'left'));   // want true  (2+2 merges)
+console.log(canMove([[2,4,2,4],[4,2,4,2],[2,4,2,4],[4,2,4,2]], 'left'));   // want false (locked board)
+console.log(canMove([[2,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]], 'left'));   // want false (already fully left, nothing moves)
+console.log(canMove([[0,0,0,2],[0,0,0,0],[0,0,0,0],[0,0,0,0]], 'left'));   // want true  (tile slides left)
