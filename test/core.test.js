@@ -124,3 +124,6 @@ console.log(canMove([[2,2,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]], 'left'));   // wa
 console.log(canMove([[2,4,2,4],[4,2,4,2],[2,4,2,4],[4,2,4,2]], 'left'));   // want false (locked board)
 console.log(canMove([[2,0,0,0],[0,0,0,0],[0,0,0,0],[0,0,0,0]], 'left'));   // want false (already fully left, nothing moves)
 console.log(canMove([[0,0,0,2],[0,0,0,0],[0,0,0,0],[0,0,0,0]], 'left'));   // want true  (tile slides left)
+
+
+

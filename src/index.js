@@ -3,4 +3,5 @@ export { spawn } from './spawn.js';
 export { hasMoves } from './hasMoves.js';
 export { canMove } from './canMove.js';
 export { score } from './score.js';
+export { createRandomBoard, isValidShot, updateBoard, isGameComplete } from './battleship.js';
    

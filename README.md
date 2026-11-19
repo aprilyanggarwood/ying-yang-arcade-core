@@ -84,6 +84,44 @@ move is possible (game over).
 - The package contains no Svelte and no DOM access, so it runs anywhere plain
   JavaScript runs.
 
+## Battleship
+
+Pure logic for a 10×10 Battleship board. Like the 2048 functions, these are
+pure: they never mutate the board you pass in.
+
+### The board
+
+A board is a 10×10 array of rows. Each cell is one of:
+
+- `"empty"` — open water, not yet shot
+- `"ship"` — part of a ship, not yet hit
+- `"hit"` — a ship cell that has been shot
+- `"miss"` — open water that has been shot
+
+```js
+import { createRandomBoard } from '@april-cs-npm/arcade-core';
+const board = createRandomBoard();   // 10×10, ships placed at random
+```
+
+### API
+
+#### `createRandomBoard(random = Math.random)`
+Returns a new 10×10 board with the standard fleet (lengths 5, 4, 3, 3, 2)
+placed at random, without overlaps or going off the board. `random` is
+optional and defaults to `Math.random`; pass your own function returning a
+number in `[0, 1)` for reproducible (seeded) boards.
+
+#### `isValidShot(board, row, col)`
+Returns `true` if `(row, col)` is a legal shot: inside the board and not a
+cell that has already been shot (`hit` or `miss`).
+
+#### `updateBoard(board, row, col)`
+Returns a new board with the shot applied: a `ship` cell becomes `hit`, an
+`empty` cell becomes `miss`. Does not mutate the input.
+
+#### `isGameComplete(board)`
+Returns `true` when every ship has been hit (no `ship` cells remain).
+
 ## License
 
 MIT

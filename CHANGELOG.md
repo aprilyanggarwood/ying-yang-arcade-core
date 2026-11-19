@@ -5,6 +5,12 @@ All notable changes to this project are documented here.
 The format is based on Keep a Changelog, and this project uses
 semantic versioning.
 
+## [1.2.0] - 2026-11-18
+
+### Added
+- Battleship logic: `createRandomBoard`, `isValidShot`, `updateBoard`,
+  `isGameComplete`.
+
 ## [1.1.0] - 2026-10-28
 
 ### Added
